@@ -329,7 +329,7 @@ class Stencil:
             connected_faces = [
                 face
                 for face in self.connectivity_indices[list(neighbourhood)].flatten()
-                if face not in neighbourhood
+                if face and face not in neighbourhood
             ]
             # count how many faces connect to each of these outer faces
             face_counts = Counter(connected_faces)
